@@ -6,6 +6,37 @@
     font-family: "StarJedi";
     src: url("./fonts/starwars/starjout.woff2");
 }
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+ .main-second {
+  background-image: url('./images/landscape-sky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+ .project-overlay-top {
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0.3) 0%,
+      hsla(0, 0%, 0%, 0.296) 8.1%,
+      hsla(0, 0%, 0%, 0.285) 15.5%,
+      hsla(0, 0%, 0%, 0.269) 22.5%,
+      hsla(0, 0%, 0%, 0.247) 29%,
+      hsla(0, 0%, 0%, 0.222) 35.3%,
+      hsla(0, 0%, 0%, 0.194) 41.2%,
+      hsla(0, 0%, 0%, 0.165) 47.1%,
+      hsla(0, 0%, 0%, 0.135) 52.9%,
+      hsla(0, 0%, 0%, 0.106) 58.8%,
+      hsla(0, 0%, 0%, 0.078) 64.7%,
+      hsla(0, 0%, 0%, 0.053) 71%,
+      hsla(0, 0%, 0%, 0.031) 77.5%,
+      hsla(0, 0%, 0%, 0.015) 84.5%,
+      hsla(0, 0%, 0%, 0.004) 91.9%,
+      hsla(0, 0%, 0%, 0) 100%
+    );
+ }
 .patua-one {
     font-family: "PatuaOne";
 }
@@ -36,6 +67,9 @@
    max-height: 100vh;
     /* animation: zoom 60s infinite ease-in-out; */
    object-fit: cover;
+}
+.parallax-img-bg.skrollable-after, .sky.skrollable-after {
+   animation: zoom 60s ease-in-out;
 }
 .star {
     position: absolute;
@@ -82,9 +116,27 @@
  animation-duration: 3.2s;
  animation-delay: 1.2s;
 }
-
+.star:nth-child(9) {
+    animation-duration: 5.2s;
+    animation-delay: 2.2s;
+}
+.star:nth-child(10) {
+    animation-duration: 1.2s;
+    animation-delay: 4.2s;
+} 
+.star:nth-child(11) {
+    animation-duration: 1.4s;
+    animation-delay: 1.8s;
+}  
+.star:nth-child(12) {
+    animation-duration: 0.9s;
+    animation-delay: 2.8s;
+}  
 .jon-roles {
     height: 30px;
+}
+.jon-image {
+    z-index: 120;
 }
 .scroll-down svg{
     position: relative;
@@ -182,8 +234,10 @@
 }
 .project-landcropped-img {
     z-index: 102;
-
 }
+/* .jon-moon {
+    animation: shake 30s infinite linear;
+} */
 .projects .card {
     z-index: 111;
 }
@@ -253,10 +307,10 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.5);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 @keyframes scrollDown {
@@ -270,3 +324,16 @@
         transform: translateY(4px);
     }
 }
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform:  rotate(-1deg); }
+    20% { transform:  rotate(1deg); }
+    30% { transform: rotate(0deg); }
+    40% { transform: rotate(1deg); }
+    50% { transform:  rotate(-1deg); }
+    60% { transform:  rotate(0deg); }
+    70% { transform: rotate(-1deg); }
+    80% { transform:  rotate(1deg); }
+    90% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
