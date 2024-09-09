@@ -230,7 +230,7 @@ body {
     z-index: 110;
 }
 .main-second{
-    animation: backgroundMove 360s infinite linear;
+    animation: backgroundMove 60s infinite linear;
 }
 .project-landcropped-img {
     z-index: 102;
@@ -272,7 +272,7 @@ body {
     }
 
     100% {
-        background-position: -5000px;
+        background-position: -1000px;
     }
 }
 @keyframes wave {
