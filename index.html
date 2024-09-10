@@ -11,7 +11,6 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="src/main.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://cdn.tailwindcss.com"></script>
  </head>
  <body>
@@ -393,7 +392,6 @@
     <img src="./src/images/landscape-cropped-optimized.png" class="project-landcropped-img w-full object-cover object-bottom-center h-3/6" data-4200="bottom: -50%;" data-4500="bottom: 0%"> 
   </div>
   <script src="src/js/skrollr.min.js" defer></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script  type="text/javascript">
     document.addEventListener("DOMContentLoaded", (event) => {
       var s = skrollr.init({
@@ -406,12 +404,31 @@
         }
       });
     });
+    window.onload = function() {
+      // The page is fully loaded, including images and other resources
+      if (typeof callback === 'function') {
+          callback();
+      }
+    };
     // Ensure that the scroll container is scrollable
-    //AOS.init();
     let scrollDownButton = document.querySelector(".scroll-down svg");
     scrollDownButton.addEventListener('click', (e) => {
       window.scrollBy(0, 800);
     })
+    function checkAllAssetsLoaded(callback) {
+    // Use the window.onload event to ensure all assets are loaded
+        window.onload = function() {
+            // The page is fully loaded, including images and other resources
+            if (typeof callback === 'function') {
+                callback();
+            }
+        };
+    }
+
+    // Example usage
+    checkAllAssetsLoaded(function() {
+        console.log("All assets are fully loaded!");
+    });
   </script>
   <script src="src/js/main.js" async defer></script>
  </body>
